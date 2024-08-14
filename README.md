@@ -43,4 +43,5 @@ Promptopia features a modern and responsive design, utilizing the latest trends 
 
 Visit the live website [here](https://promptopia-od9tlp2qy-paulo-de-melo-borges-projects.vercel.app/).
 
-
+## 💭 Thoughts
+Overall this was a good tutorial and helped me with my first contact with Next.js, especially with file structuring and routing. During the development I encountered several challenges that helped me deepen my understanding of the tecnologies used. For example, one issue was when the message 'Try signing in with a different account' apperead when attempting to log in. After searching for a long time and finding no solution, I reviewed the console logs and Next Auth warnings, and discovered that the `NEXTAUTH_URL`and `NEXTAUTH_SECRET` were not defined, even though they were. So this was resolved by moving the `.env` file from the `utils` directory to the root of the project. Now I plan to deepen my Next.js and React knowledge.
