@@ -1,5 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect, useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import Form from "@components/Form";
@@ -33,7 +34,7 @@ const EditPrompt = () => {
     e.preventDefault();
     setSubmitting(true);
 
-    if(!promptId) return alert('Prompt ID not found');
+    if (!promptId) return alert("Prompt ID not found");
 
     try {
       const response = await fetch(`/api/prompt/${promptId}`, {
@@ -65,4 +66,13 @@ const EditPrompt = () => {
   );
 };
 
-export default EditPrompt;
+// Wrap EditPrompt component with Suspense
+const EditPromptWrapper = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <EditPrompt />
+    </Suspense>
+  );
+};
+
+export default EditPromptWrapper;
